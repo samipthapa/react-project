@@ -45,13 +45,13 @@ p, body {
 }
 
 .container {
+  display: flex;
+  gap: 10%;
+}
+
+.card-container {
   padding: 27px 40px 0px 40px;
-  width: 60%;
-  margin-top: 3%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 50%;
 }
 
 .title {
@@ -120,4 +120,61 @@ hr {
   letter-spacing: 0.12em;
   margin: 10px;
   text-decoration: none;
+}
+
+.places--heading {
+  font-family: 'Tiro Devanagari Marathi', serif;
+  font-size: 2 em;
+  padding-top: 20px;
+}
+
+.fa-plus-square {
+  background-color: white;
+  color: rgba(245, 90, 90, 1);
+  font-size: 2.3em;
+}
+
+input {
+  width: 300px;
+  border: 1px solid #D5D4D8;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.textInput {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.add-item:hover {
+  font-size: 1.15em;
+}
+
+.liItem {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 20px 5px;
+  background: rgb(235, 246, 247);
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+.delete-item:hover {
+  font-size: 1.3em;
+  color: red;
+}
+
+.fa-trash {
+  color: red;
+  font-size: 1.5em;
 }
