@@ -1,12 +1,10 @@
 import React from "react"
-import Navbar from "./components/Navbar"
 import Card from "./components/Card"
 import PlacesList from "./components/PlacesList"
 
 function App() {  
     return (
         <div>
-            <Navbar />
             <div className="container">
               <div className="card-container">
                 <Card 
