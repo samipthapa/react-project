@@ -5,8 +5,10 @@ import { Link } from "react-router-dom";
 function Navbar() {
     return (
         <div className="navbar">
-            <img src={Logo} />
-            <p>my travel blog.</p>
+            <div className="navbar--logo">
+                <img src={Logo} />
+                <p>my travel blog.</p>
+            </div>
             <ul className="nav--links">
                 <li><Link to="/" className="routes">Home</Link></li>
                 <li><Link to="/about" className="routes">About</Link></li>
