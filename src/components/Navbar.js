@@ -13,6 +13,7 @@ function Navbar() {
                 <li><Link to="/" className="routes">Home</Link></li>
                 <li><Link to="/about" className="routes">About</Link></li>
                 <li><Link to="/login" className="routes">Login</Link></li>
+                <li><Link to="/register" className="routes">Register</Link></li>
             </ul>       
         </div>
     )
