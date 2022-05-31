@@ -1,7 +1,30 @@
-import React from "react"
+import React, {useState} from "react"
 import "../css/Register.css"
+import axios from "axios"
 
 function Register() {
+    const [email, setEmail] = useState('')
+    const [userName, setUserName] = useState('')
+
+    function onChangeEmail(e) {
+        const value = e.target.value;
+        setEmail(value)
+    }
+
+    function onChangeUsername(e) {
+        const value = e.target.value;
+        setUserName(value)
+    }
+
+    function onSubmit() {
+        const payload = {
+            username: userName,
+            email
+        }
+        console.log(payload)
+        axios.post('http://localhost:1337/api/auth/local/register', payload)
+    }
+
     return (
         <div className="register--container">
             <div class="register--card">
@@ -15,11 +38,11 @@ function Register() {
                                     </div>
                                     <div class="input-box">
                                         <span class="details">Username</span>
-                                        <input type="text" placeholder="Enter your username" required />
-                                    </div>
+                                        <input type="text" placeholder="Enter your username" onChange={onChangeUsername}required />
+                                    </div> 
                                     <div class="input-box">
                                         <span class="details">Email</span>
-                                        <input type="text" placeholder="Enter your email" required />
+                                        <input type="text" placeholder="Enter your email" onChange={onChangeEmail}  required />
                                     </div>
                                     <div class="input-box">
                                         <span class="details">Phone Number</span>
@@ -55,7 +78,7 @@ function Register() {
                                 </div>
                             </div>
                             <div class="button">
-                                <input type="submit" value="Register" />
+                                <input type="submit" value="Register" onClick={onSubmit} />
                             </div>
                         </form>
                     </div>

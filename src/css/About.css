@@ -1,0 +1,14 @@
+.about--container {
+    padding: 20px; 
+}
+
+.about--container > p {
+    padding: 10px;
+    width: 60%;
+    font-size: 18px;
+}
+
+.about--container > img {
+    padding: 10px;
+    height: 700px;
+}

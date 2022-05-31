@@ -6,16 +6,21 @@ function BucketList() {
 
     function addPlace(e) {
         setPlaces(prevState => [...prevState, input]);
+        setInput('')
+        e.preventDefault();
     }
 
-    function removePlace(item) {
-        console.log(item)
+    function removePlace(e) {
+        setPlaces(places.filter(place => place != e.target.parentElement.parentElement.textContent))
     }
 
     const placesElement = places.map(function(item) {
         return (
             <div className="liItem" id="liItem">
                 <li>{item}</li>
+                <a href="#" class="delete-item">
+                        <i class="fas fa-trash fa-lg" onClick={removePlace}></i>   
+                    </a>
             </div>
         )
     })
@@ -26,8 +31,8 @@ function BucketList() {
             <form onSubmit={addPlace}>
                 <div className="textInput">
                     <input type="text" className="task" onChange={
-                        (e) => setInput(e.target.value)
-                    }/>
+                        (e) => {setInput(e.target.value)}
+                    }  value={input}/>
                     <a href="#" className="add-item">
                         <i class="fas fa-plus-square fa-2x" onClick={addPlace}></i>
                     </a>
